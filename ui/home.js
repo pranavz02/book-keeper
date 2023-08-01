@@ -9,11 +9,17 @@ data.forEach(res => {
     let name = document.createTextNode('Name:' + res.name + ', ');
     card.appendChild(name);
 
+    let author = document.createTextNode('Author:' + res.author + ', ');
+    card.appendChild(author);
+
     let description = document.createTextNode('Description:' + res.description + ', ');
     card.appendChild(description);
 
-    let date = document.createTextNode('date:' + res.date);
-    card.appendChild(date);
+    let startDate = document.createTextNode('Start Date:' + res.startDate);
+    card.appendChild(startDate);
+
+    let endDate = document.createTextNode('Start Date:' + res.endDate);
+    card.appendChild(endDate);
 
     let container = document.querySelector("#card");
     container.appendChild(card);

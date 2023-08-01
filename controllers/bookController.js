@@ -3,7 +3,7 @@ import Book from "../model/bookModel.js"
 
 //@route GET /books
 const getAllBooks = asyncHandler(async (req, res) => {
-  const books = await Book.find()
+  const books = await Book.find({})
   res.status(200).json(books);
 })
 

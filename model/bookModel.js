@@ -2,17 +2,19 @@ import mongoose from "mongoose"
 
 const bookSchema = mongoose.Schema(
   {
+    id: {
+        type: Number,
+    },
     name: {
       type: String,
-      required: [true, "Add the name of book"],
+      required: [true, "Please add the name of book"],
     },
     Author: {
       type: String,
-      required: [true, "Add the name of author"]
     },
     startDate: {
       type: Date,
-      required: [true, "Add a start date"],
+      required: [true, "Please add the start date"],
     },
     endDate: {
         type: Date,
@@ -24,7 +26,6 @@ const bookSchema = mongoose.Schema(
   {
     timestamps: true,
   }
-)
+);
 
-const Book = mongoose.model('Book', bookSchema)
-export default Book
+export default mongoose.model("Books", bookSchema);

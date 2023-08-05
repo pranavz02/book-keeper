@@ -4,14 +4,14 @@ const bookSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Add the name of book"],
+      required: true,
     },
-    Author: {
+    author: {
       type: String,
     },
     startDate: {
       type: Date,
-      required: [true, "Add a start date"],
+      required: true,
     },
     endDate: {
         type: Date,

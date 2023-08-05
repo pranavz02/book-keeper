@@ -8,7 +8,6 @@ const bookSchema = mongoose.Schema(
     },
     Author: {
       type: String,
-      required: [true, "Add the name of author"]
     },
     startDate: {
       type: Date,

@@ -20,6 +20,7 @@ const createBook = asyncHandler(async (req, res) => {
 //@desc Update book
 //@route PUT /books/:id
 const updateBook = asyncHandler(async (req, res) => {
+  console.log(req.params.id)
   const book = await Book.findById(req.params.id)
   if (!book) 
     return res.status(404).json({msg: 'Book not found'})
@@ -27,7 +28,6 @@ const updateBook = asyncHandler(async (req, res) => {
   const { endDate, summary } = req.body
   book.endDate = endDate
   book.summary = summary
-  await book.update()
   const updatedBook = await book.save()
 
   res.status(200).json(updatedBook);
@@ -40,7 +40,8 @@ const deleteBook = asyncHandler(async (req, res) => {
   if (!book)
     return res.status(404).json({msg: 'Book not found'})
 
-  await book.deleteOne()
+  await Book.findByIdAndDelete({_id: req.params.id})
+
   res.status(200).json({msg: 'Book deleted successfully'})
 })
 

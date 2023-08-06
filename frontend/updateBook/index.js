@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
-const bookId = urlParams.get("_id");
-
+const bookId = urlParams.get("bookId");
+console.log(bookId)
 const updateBookButton = document.querySelector(".create-note-button");
 
 const apiUrl = "http://localhost:5000";
@@ -22,6 +22,7 @@ updateBookButton.addEventListener("click", () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (data) {
           location.href = "/frontend/dashboard/home.html";
         }

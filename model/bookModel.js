@@ -1,9 +1,10 @@
 import mongoose from "mongoose"
 
-const bookSchema = mongoose.Schema(
+const bookSchema = new mongoose.Schema(
   {
     name: {
       type: String,
+      unique: true,
       required: true,
     },
     author: {
